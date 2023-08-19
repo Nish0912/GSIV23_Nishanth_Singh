@@ -1,0 +1,24 @@
+.searched-movielist-container {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.searched-movielist-text-container {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.searched-movielist-moviecard {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1260px) {
+  .searched-movielist-container {
+    margin-top: 30px;
+  }
+}

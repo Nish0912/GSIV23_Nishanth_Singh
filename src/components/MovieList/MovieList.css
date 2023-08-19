@@ -1,0 +1,19 @@
+.movielist-text-container {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.movielist-moviecard {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1260px) {
+  .movielist-container {
+    margin-top: 30px;
+  }
+}

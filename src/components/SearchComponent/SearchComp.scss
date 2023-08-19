@@ -1,0 +1,22 @@
+.search-container {
+    width: 100%;
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+    .search-container {
+        width: 400px;
+    }
+}
