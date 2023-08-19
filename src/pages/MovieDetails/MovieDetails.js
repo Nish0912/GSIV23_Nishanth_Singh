@@ -69,7 +69,7 @@ const MovieDetails = () => {
         <Typography className="header-left">
           Movie Details
         </Typography>
-        <Link className="header-right" to="/movieapp">
+        <Link className="header-right" to="/">
           <HomeIcon />
         </Link>
       </Stack>
