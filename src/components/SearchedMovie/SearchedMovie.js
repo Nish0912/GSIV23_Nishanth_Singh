@@ -48,7 +48,7 @@ const SearchedMovie = ({ search }) => {
     if(search !== previousSearch) {
       fetchMovie();
     }
-  }, []);
+  }, [search]);
 
   const handleScroll = () => {
     if (
@@ -67,7 +67,7 @@ const SearchedMovie = ({ search }) => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [loading]);
 
   if (!search) {
     return <Loader />;

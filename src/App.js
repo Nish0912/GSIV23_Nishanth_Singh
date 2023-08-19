@@ -27,7 +27,7 @@ function App() {
             }
           />
           <Route path="/movieapp/movie/:id" element={<MovieDetails />} />
-          <Route path="/*" element={<NotFound />} />
+          <Route path="/*" element={<Home search={search} />} />
         </Routes>
     </div>
     </>

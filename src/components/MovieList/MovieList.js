@@ -57,7 +57,7 @@ const MovieList = () => {
 
   useEffect(() => {
     fetchMovieList();
-  }, [fetchMovieList]); 
+  }, [fetchMovieList]);
 
   // Removing duplicacy
   const mappedMovies = movies.reduce(
