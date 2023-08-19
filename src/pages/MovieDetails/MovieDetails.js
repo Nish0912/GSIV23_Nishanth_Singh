@@ -14,13 +14,6 @@ const MovieDetails = () => {
   const [currentMovieDetail, setCurrentMovieDetail] = useState(null);
   const { id } = useParams();
 
-  useEffect(() => {
-    // setTimeout(() => {
-    //   getData();
-    //   window.scrollTo(0, 0);
-    // }, 1500);
-    getData();
-  }, [currentMovieDetail]);
 
   const getData = async () => {
     const movieList = await fetch(
@@ -34,6 +27,14 @@ const MovieDetails = () => {
     const creditors = await movieCreditors.json();
     setCurrentMovieDetail({ ...movieDetails, ...creditors });
   };
+
+   
+  useEffect(() => {
+    getData();
+  }, []); 
+
+
+
 
   const getRating = (vote_average) => {
     if (vote_average === 0) {
