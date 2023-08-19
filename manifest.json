@@ -1,0 +1,15 @@
+{
+  "short_name": "Movix",
+  "name": "Movix Search App",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "512x512",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#3498db",
+  "background_color": "#ffffff"
+}
