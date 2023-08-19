@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/GSIV23_Nishanth_Singh/static/css/main.ea0fda6d.css",
-    "main.js": "/GSIV23_Nishanth_Singh/static/js/main.482b3187.js",
+    "main.js": "/GSIV23_Nishanth_Singh/static/js/main.bee0c783.js",
     "static/media/notfound.jpg": "/GSIV23_Nishanth_Singh/static/media/notfound.35408985e8b682ee264a.jpg",
     "index.html": "/GSIV23_Nishanth_Singh/index.html",
     "main.ea0fda6d.css.map": "/GSIV23_Nishanth_Singh/static/css/main.ea0fda6d.css.map",
-    "main.482b3187.js.map": "/GSIV23_Nishanth_Singh/static/js/main.482b3187.js.map"
+    "main.bee0c783.js.map": "/GSIV23_Nishanth_Singh/static/js/main.bee0c783.js.map"
   },
   "entrypoints": [
     "static/css/main.ea0fda6d.css",
-    "static/js/main.482b3187.js"
+    "static/js/main.bee0c783.js"
   ]
 }
