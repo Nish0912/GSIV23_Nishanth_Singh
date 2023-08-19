@@ -15,10 +15,11 @@ const MovieDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    setTimeout(() => {
-      getData();
-      window.scrollTo(0, 0);
-    }, 1500);
+    // setTimeout(() => {
+    //   getData();
+    //   window.scrollTo(0, 0);
+    // }, 1500);
+    getData();
   }, []);
 
   const getData = async () => {

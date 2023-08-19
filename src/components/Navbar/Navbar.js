@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, Typography, TextField, Input } from "@mui/material";
+import { Stack } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
