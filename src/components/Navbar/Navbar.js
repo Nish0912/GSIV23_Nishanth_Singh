@@ -22,7 +22,7 @@ const Navbar = ({ search, setSearch }) => {
         <SearchComp search={search} setSearch={setSearch} />
       </Stack>
       <Stack className="header-right">
-        <Link to="/GSIV23_Nishanth_Singh" onClick={() => setSearch("")}>
+        <Link to="/" onClick={() => setSearch("")}>
           <HomeIcon />
         </Link>
       </Stack>
