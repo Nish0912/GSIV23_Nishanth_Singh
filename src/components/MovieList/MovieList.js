@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import { getLatestMovies } from "../../utility/helper";
 
@@ -18,7 +18,7 @@ const MovieList = () => {
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
 
-  const fetchMovieList = async () => {
+  const fetchMovieList = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
@@ -27,7 +27,7 @@ const MovieList = () => {
       );
       const movies = await movieList.json();
       const latestMovies = getLatestMovies(movies?.results ?? []);
-      setCategoryMovieList([...categoryMovieList, ...latestMovies]);
+      setCategoryMovieList((prevMovies) => [...prevMovies, ...latestMovies]);
       dispatch(setMovies([...categoryMovieList, ...latestMovies]));
       setPage((prevPage) => prevPage + 1);
     } catch (error) {
@@ -36,9 +36,9 @@ const MovieList = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [categoryMovieList, dispatch, page]);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (
       window.innerHeight + document.documentElement.scrollTop <
         document.documentElement.offsetHeight - 20 ||
@@ -48,22 +48,23 @@ const MovieList = () => {
     }
     fetchMovieList();
     window.scrollTo(0, document.documentElement.offsetHeight - 200);
-  };
+  }, [fetchMovieList, isLoading]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isLoading]);
+  }, [handleScroll]);
 
   useEffect(() => {
     fetchMovieList();
-  }, []);
+  }, [fetchMovieList]);
 
   // Removing duplicacy
-  const MappedMovies = movies.reduce(
+  const mappedMovies = movies.reduce(
     (acc, x) => acc.concat(acc.find((y) => y.id === x.id) ? [] : [x]),
     []
   );
+
   return (
     <div className="movielist-container">
       <Stack className="movielist-text-container">
@@ -75,7 +76,7 @@ const MovieList = () => {
           gap: { lg: "50px", xs: "40px" },
         }}
       >
-        {MappedMovies?.map((movie, index) => (
+        {mappedMovies?.map((movie, index) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </Stack>
