@@ -20,7 +20,7 @@ const MovieDetails = () => {
     //   window.scrollTo(0, 0);
     // }, 1500);
     getData();
-  }, []);
+  }, [currentMovieDetail]);
 
   const getData = async () => {
     const movieList = await fetch(
